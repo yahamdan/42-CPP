@@ -10,7 +10,7 @@ public:
     WrongAnimal();
     WrongAnimal( const WrongAnimal& other );
     WrongAnimal& operator= ( const WrongAnimal& other );
-    ~WrongAnimal();
+    virtual ~WrongAnimal();
 
     std::string    getType() const;
     void    setType( std::string type );

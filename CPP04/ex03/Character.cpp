@@ -3,6 +3,7 @@
 Character::Character()
 {
     name = "None";
+    list = NULL;
     for ( int i = 0 ; i < 4 ; i++ )
         slot[i] = NULL;
 }
@@ -52,7 +53,10 @@ void    Character::equip( AMateria *m )
 void    Character::unequip( int idx )
 {
     if ( idx >= 0 && idx < 4 )
+    {
+        list->AddToList( slot[idx] );
         slot[idx] = 0;
+    }
 }
 
 void Character::use( int idx , ICharacter& target )
@@ -73,4 +77,5 @@ Character::~Character()
         if (slot[i])
             delete slot[i];
     }
+    delete list;
 }

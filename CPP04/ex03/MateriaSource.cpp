@@ -40,6 +40,7 @@ void    MateriaSource::learnMateria( AMateria * newM )
             return ;
         }
     }
+    
 }
 
 AMateria*   MateriaSource::createMateria( std::string const& type )

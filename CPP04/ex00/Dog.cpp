@@ -6,7 +6,7 @@ Dog::Dog() : Animal()
     type = "Dog";
 }
 
-Dog::Dog( const Dog& other )
+Dog::Dog( const Dog& other ) : Animal( other )
 {
     *this = other;
 }

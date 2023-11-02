@@ -17,5 +17,10 @@ int main()
 
 
     h->makeSound();
+    
+    delete meta;
+    delete j;
+    delete i;
+    delete h;
     return 0;
 }

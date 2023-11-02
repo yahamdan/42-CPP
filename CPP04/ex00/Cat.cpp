@@ -7,7 +7,7 @@ Cat::Cat() : Animal()
     type = "Cat";
 }
 
-Cat::Cat( const Cat& other )
+Cat::Cat( const Cat& other ) : Animal( other )
 {
     *this = other;
 }

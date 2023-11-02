@@ -11,10 +11,11 @@ int main()
     src->learnMateria(new Cure());
     
     ICharacter* me = new Character("me");
-    AMateria* tmp;
+    AMateria* tmp = NULL;
     
     tmp = src->createMateria("ice");
     me->equip(tmp);
+    delete tmp;
     tmp = src->createMateria("cure");
     me->equip(tmp);
     me->unequip(7);
@@ -28,6 +29,7 @@ int main()
     delete me;
     
     delete src;
+    delete tmp;
     
     return 0;
 }

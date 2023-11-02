@@ -3,20 +3,19 @@
 
 int main()
 {
-    Animal *animals[4];
+    Animal *animals[2];
 
-    for( int i = 0 ; i < 4 ; i++ )
+    for( int i = 0 ; i < 2 ; i++ )
     {
-        if ( i < 2 )
+        if ( i < 1 )
             animals[i] = new Dog();
         else
             animals[i] = new Cat();
     }
 
     animals[1]->makeSound();
-    animals[3]->makeSound();
+    animals[0]->makeSound();
 
-
-    for ( int i = 0 ; i < 4 ; i++ )
+    for ( int i = 0 ; i < 2 ; i++ )
         delete animals[i];
 }

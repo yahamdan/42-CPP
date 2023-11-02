@@ -4,21 +4,32 @@ AMateria::AMateria()
 {    
 }
 
+AMateria::AMateria( const AMateria& other )
+{
+    *this = other;
+}
+
 AMateria::AMateria( std::string const & type )
 {
     this->type = type;
 }
 
-AMateria& Amateria::operator= ( const AMateria& other )
+AMateria& AMateria::operator= ( const AMateria& other )
 {
     if ( this != &other )
         *this = other;
     return *this;
 }
 
-std::stirng const & AMateria::getType() const
+std::string const & AMateria::getType() const
 {
     return type;
+}
+
+void    AMateria::use( ICharacter& target )
+{
+    std::cout << "none" << std::endl;
+    std::cout << target.getName() << std::endl;
 }
 
 AMateria::~AMateria()

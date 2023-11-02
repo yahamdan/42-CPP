@@ -2,9 +2,9 @@ NAME = Interface
 
 CC = c++
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror  -std=c++98 #-fsanitize=address -g3
 
-SRC = main.cpp Cure.cpp Ice.cpp Character.cpp ICharacter.cpp IMateriaSource.cpp MateriaSource.cpp AMateria.cpp 
+SRC = main.cpp Cure.cpp Ice.cpp Character.cpp MateriaSource.cpp AMateria.cpp 
 
 OBJ = $(SRC:.cpp=.o)
 

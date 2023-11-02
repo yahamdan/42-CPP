@@ -49,7 +49,28 @@ void    Character::equip( AMateria *m )
     }
 }
 
+void    Character::unequip( int idx )
+{
+    if ( idx >= 0 && idx < 4 )
+        slot[idx] = 0;
+}
+
+void Character::use( int idx , ICharacter& target )
+{
+    if ( slot[idx] )
+        slot[idx]->use( target );
+}
+
+std::string const& Character::getName() const
+{
+    return name;
+}
+
 Character::~Character()
 {
-
+    for ( int i = 0 ; i < 4 ; i++)
+    {
+        if (slot[i])
+            delete slot[i];
+    }
 }

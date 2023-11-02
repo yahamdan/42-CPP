@@ -32,9 +32,9 @@ void    MateriaSource::setSlot( AMateria * tmp )
 
 void    MateriaSource::learnMateria( AMateria * newM )
 {
-    for (int i  = 0 ; i < 4 ; i++ )
+    for ( int i = 0 ; i < 4 ; i++ )
     {
-        if ( slot[i] == 0)
+        if ( slot[i] == 0 )
         {
             slot[i] = newM;
             return ;

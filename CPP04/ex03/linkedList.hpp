@@ -6,11 +6,11 @@
 class linkedList
 {
 private :
-    node *list;
 public: 
+    node *head;
     linkedList();
-    linkedList( const linkedList& other );
-    linkedList& operator= ( const linkedList& other );
+    // linkedList( const linkedList& other );
+    // linkedList& operator= ( const linkedList& other );
     
     void AddToList( void * l );
 

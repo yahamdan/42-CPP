@@ -2,14 +2,15 @@
 
 Character::Character()
 {
+    list = 0;
     name = "None";
-    list = NULL;
     for ( int i = 0 ; i < 4 ; i++ )
         slot[i] = NULL;
 }
 
 Character::Character( std::string name )
 {
+    list = 0;
     this->name = name;
     for ( int i = 0 ; i < 4 ; i++ )
         slot[i] = NULL;
@@ -17,6 +18,7 @@ Character::Character( std::string name )
 
 Character::Character( const Character& other )
 {
+    list = 0;
     *this = other;
 }
 
@@ -44,16 +46,23 @@ void    Character::equip( AMateria *m )
     for ( int i = 0 ; i < 4 ; i++ )
     {
         if ( slot[i] == 0 ){
-            slot[i] = m->clone();
-            break;
+            slot[i] = m;
+            return ;
         }
     }
+     if (!list){
+            list = new linkedList();
+    }
+    list->AddToList( m );
 }
 
 void    Character::unequip( int idx )
 {
     if ( idx >= 0 && idx < 4 )
     {
+        if (!list){
+            list = new linkedList();
+        }
         list->AddToList( slot[idx] );
         slot[idx] = 0;
     }

@@ -2,34 +2,35 @@
 
 linkedList::linkedList()
 {
-    list = NULL;
+    head = NULL;
 }
 
-linkedList::linkedList( const linkedList& other )
-{
-    *this = other;
-}
+// linkedList::linkedList( const linkedList& other )
+// {
+//     *this = other;
+// }
 
-linkedList& linkedList::operator=( const linkedList& other )
-{
-    if ( this != &other )
-        *this = other;
-    return *this;
-}
+// linkedList& linkedList::operator=( const linkedList& other )
+// {
+//     if ( this != &other )
+//         *this = other;
+//     return *this;
+// }
 
 void   linkedList::AddToList( void * l )
 {
     node *newnode = new node();
     
     newnode->address = l;
+    newnode->next = NULL;
     
-    if (list == NULL)
+    if (head == NULL)
     {
-        list = newnode;
+        head = newnode;
         return;
     }
     
-    node *tmp = list;
+    node *tmp = head;
     
     while ( tmp->next )
         tmp = tmp->next;
@@ -38,11 +39,11 @@ void   linkedList::AddToList( void * l )
 
 linkedList::~linkedList()
 {
-    node *x;
-    while( list && list->next )
+    node *x = head;
+    while( head )
     {
-        x = list;
-        list = list->next;
+        x = head;
+        head = head->next;
         delete x;
     }
 }

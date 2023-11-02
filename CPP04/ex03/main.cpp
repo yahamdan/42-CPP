@@ -15,10 +15,10 @@ int main()
     
     tmp = src->createMateria("ice");
     me->equip(tmp);
-    delete tmp;
+    // delete tmp;
     tmp = src->createMateria("cure");
     me->equip(tmp);
-    me->unequip(7);
+    me->unequip(1);
     
     ICharacter* bob = new Character("bob");
     
@@ -29,7 +29,6 @@ int main()
     delete me;
     
     delete src;
-    delete tmp;
     
     return 0;
 }

@@ -8,7 +8,7 @@ public :
     node *next;
 
     node();
-    node( const node& other );
-    node& operator= ( const node& other );
+    // node( const node& other );
+    // node& operator= ( const node& other );
     ~node();
 };

@@ -17,16 +17,12 @@ linkedList::linkedList()
 //     return *this;
 // }
 
-void   linkedList::AddToList( void * l )
+void   linkedList::AddToList( node* l )
 {
-    node *newnode = new node();
-    
-    newnode->address = l;
-    newnode->next = NULL;
-    
+    l->next = NULL;
     if (head == NULL)
     {
-        head = newnode;
+        head = l;
         return;
     }
     
@@ -34,7 +30,7 @@ void   linkedList::AddToList( void * l )
     
     while ( tmp->next )
         tmp = tmp->next;
-    tmp->next = newnode;
+    tmp->next = l;
 }
 
 linkedList::~linkedList()

@@ -12,7 +12,7 @@ public:
     // linkedList( const linkedList& other );
     // linkedList& operator= ( const linkedList& other );
     
-    void AddToList( void * l );
+    void AddToList( node* l );
 
     ~linkedList();
 };

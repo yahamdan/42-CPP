@@ -8,6 +8,7 @@ public :
     node *next;
 
     node();
+    node(void * l);
     // node( const node& other );
     // node& operator= ( const node& other );
     ~node();

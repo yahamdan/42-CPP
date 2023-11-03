@@ -2,7 +2,6 @@
 
 Character::Character()
 {
-    list = 0;
     name = "None";
     for ( int i = 0 ; i < 4 ; i++ )
         slot[i] = NULL;
@@ -10,7 +9,6 @@ Character::Character()
 
 Character::Character( std::string name )
 {
-    list = 0;
     this->name = name;
     for ( int i = 0 ; i < 4 ; i++ )
         slot[i] = NULL;
@@ -18,7 +16,6 @@ Character::Character( std::string name )
 
 Character::Character( const Character& other )
 {
-    list = 0;
     *this = other;
 }
 
@@ -50,20 +47,14 @@ void    Character::equip( AMateria *m )
             return ;
         }
     }
-     if (!list){
-            list = new linkedList();
-    }
-    list->AddToList( m );
+    list.AddToList( new node(m) );
 }
 
 void    Character::unequip( int idx )
 {
     if ( idx >= 0 && idx < 4 )
     {
-        if (!list){
-            list = new linkedList();
-        }
-        list->AddToList( slot[idx] );
+        list.AddToList( new node(slot[idx]) );
         slot[idx] = 0;
     }
 }
@@ -86,5 +77,4 @@ Character::~Character()
         if (slot[i])
             delete slot[i];
     }
-    delete list;
 }

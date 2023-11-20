@@ -1,3 +1,4 @@
+
 #include "Character.hpp"
 
 Character::Character()
@@ -22,7 +23,8 @@ Character::Character( const Character& other )
 Character& Character::operator= ( const Character& other )
 {
     if ( this != &other ){
-        setSlot( other.getSlot() );
+        this->name = other.name;
+        this->setSlot( other.getSlot() );
     }
     return *this;
 }
@@ -44,6 +46,7 @@ void    Character::equip( AMateria *m )
     {
         if ( slot[i] == 0 ){
             slot[i] = m;
+            list.AddToList( new node(slot[i]) );
             return ;
         }
     }
@@ -55,13 +58,13 @@ void    Character::unequip( int idx )
     if ( idx >= 0 && idx < 4 )
     {
         list.AddToList( new node(slot[idx]) );
-        slot[idx] = 0;
+        slot[idx] = NULL;
     }
 }
 
 void Character::use( int idx , ICharacter& target )
 {
-    if ( slot[idx] )
+    if ( idx >= 0 && idx < 4 && slot[idx] )
         slot[idx]->use( target );
 }
 
@@ -72,9 +75,5 @@ std::string const& Character::getName() const
 
 Character::~Character()
 {
-    for ( int i = 0 ; i < 4 ; i++)
-    {
-        if (slot[i])
-            delete slot[i];
-    }
+
 }

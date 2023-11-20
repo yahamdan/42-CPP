@@ -11,10 +11,11 @@ int main()
     WrongAnimal *h = new WrongCat();
     std::cout << j->getType() << " " << std::endl;
     std::cout << i->getType() << " " << std::endl;
+    
     i->makeSound(); 
     j->makeSound();
+    
     meta->makeSound();
-
 
     h->makeSound();
     

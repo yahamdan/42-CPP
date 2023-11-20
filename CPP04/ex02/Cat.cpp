@@ -11,14 +11,18 @@ Cat::Cat() : Animal()
 Cat::Cat( const Cat& other ) : Animal( other )
 {
     std::cout << "Cat Constructor called" << std::endl;
-
+    b = new Brain();
     b->setIdeas( other.b->getIdeas() );
 }
 
 Cat& Cat::operator= ( const Cat& other )
 {
     if ( this != &other )
-       b->setIdeas( other.b->getIdeas() );
+    {
+        delete b;
+        b = new Brain();
+        b->setIdeas( other.b->getIdeas() );
+    }
     return *this;
 }   
 

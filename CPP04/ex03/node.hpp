@@ -1,15 +1,18 @@
+
 #pragma once
 
 #include <iostream>
+#include "AMateria.hpp"
 class node
 {
 public :
-    void *address;
+    AMateria* address;
     node *next;
 
     node();
-    node(void * l);
-    // node( const node& other );
-    // node& operator= ( const node& other );
+    node(AMateria* l);
+    node( const node& other );
+    node& operator= ( const node& other );
+    
     ~node();
 };

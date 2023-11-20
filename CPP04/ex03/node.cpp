@@ -1,3 +1,4 @@
+
 #include "node.hpp"
 #include "AMateria.hpp"
 
@@ -7,25 +8,27 @@ node::node()
     next = NULL;
 }
 
-node::node(void* l)
+node::node(AMateria* l)
 {
     address = l;
     next = NULL;
 }
 
-// node::node( const node& other )
-// {
-//     *this = other;
-// }
+node::node( const node& other )
+{
+    *this = other;
+}
 
-// node& node::operator= ( const node& other )
-// {
-//     if ( this != &other )
-//         *this = other;
-//     return *this;
-// }
+node& node::operator= ( const node& other )
+{
+    if ( this != &other )
+    {
+        this->address = other.address;
+        this->next = other.next;
+    }
+    return *this;
+}
 
 node::~node()
 {
-    
 }

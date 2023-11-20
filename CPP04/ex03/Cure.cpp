@@ -1,3 +1,4 @@
+
 #include "Cure.hpp"
 
 Cure::Cure() : AMateria("cure")
@@ -12,7 +13,7 @@ Cure::Cure( const Cure& other ) : AMateria( other )
 Cure& Cure::operator= ( const Cure& other )
 {
     if ( this != & other )
-        *this = other;
+        return *this;
     return *this;
 }
 

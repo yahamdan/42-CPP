@@ -1,3 +1,4 @@
+
 #include "Brain.hpp"
 
 Brain::Brain()
@@ -16,7 +17,9 @@ Brain::Brain( const Brain& other )
 Brain& Brain::operator= ( const Brain& other )
 {
     if ( this != &other )
-        *this = other;
+    {
+        this->setIdeas( other.ideas );
+    }
     return *this;
 }
 
@@ -25,7 +28,7 @@ std::string *Brain::getIdeas()
     return ideas;
 }
 
-void    Brain::setIdeas( std::string *id )
+void    Brain::setIdeas( const std::string *id )
 {
     for (int i = 0 ; i < 100 ; i++ )
         ideas[i] = id[i];

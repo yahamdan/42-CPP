@@ -11,14 +11,17 @@ Dog::Dog( const Dog& other ) : Animal( other )
 {
     std::cout << "Dog Constructor called" << std::endl;
     b = new Brain();
-
     b->setIdeas( other.b->getIdeas() );
 }
 
 Dog& Dog::operator= ( const Dog& other )
 {
     if ( this != &other )
-       b->setIdeas( other.b->getIdeas() );
+    {
+        delete b;
+        b = new Brain();
+        b->setIdeas( other.b->getIdeas() );
+    }
     return *this;
 }   
 

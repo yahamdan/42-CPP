@@ -1,3 +1,4 @@
+
 #pragma once
 
 #include <iostream>
@@ -12,7 +13,7 @@ public :
     Brain& operator= (const Brain& other );
     
     std::string *getIdeas();
-    void    setIdeas( std::string *id );
+    void    setIdeas( const std::string *id );
 
     ~Brain();
 };

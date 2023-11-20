@@ -15,7 +15,7 @@ Cat::Cat( const Cat& other ) : Animal( other )
 Cat& Cat::operator= ( const Cat& other )
 {
     if ( this != &other )
-        *this = other;
+        return *this;
     return *this;
 }   
 

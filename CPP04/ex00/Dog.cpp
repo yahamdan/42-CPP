@@ -1,3 +1,4 @@
+
 #include "Dog.hpp"
 
 Dog::Dog() : Animal()
@@ -14,7 +15,7 @@ Dog::Dog( const Dog& other ) : Animal( other )
 Dog& Dog::operator= ( const Dog& other )
 {
     if ( this != &other )
-        *this = other;
+        return *this;
     return *this;
 }   
 

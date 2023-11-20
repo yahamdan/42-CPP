@@ -1,21 +1,26 @@
+
 #include "linkedList.hpp"
+
+linkedList list;
 
 linkedList::linkedList()
 {
     head = NULL;
 }
 
-// linkedList::linkedList( const linkedList& other )
-// {
-//     *this = other;
-// }
+linkedList::linkedList( const linkedList& other )
+{
+    *this = other;
+}
 
-// linkedList& linkedList::operator=( const linkedList& other )
-// {
-//     if ( this != &other )
-//         *this = other;
-//     return *this;
-// }
+linkedList& linkedList::operator=( const linkedList& other )
+{
+    if ( this != &other )
+    {
+        this->head = other.head;
+    }
+    return *this;
+}
 
 void   linkedList::AddToList( node* l )
 {
@@ -35,11 +40,5 @@ void   linkedList::AddToList( node* l )
 
 linkedList::~linkedList()
 {
-    node *x = head;
-    while( head )
-    {
-        x = head;
-        head = head->next;
-        delete x;
-    }
+
 }

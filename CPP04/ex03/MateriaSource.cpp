@@ -37,14 +37,16 @@ void    MateriaSource::learnMateria( AMateria * newM )
         if ( slot[i] == 0 )
         {
             slot[i] = newM;
+            list.AddToList( new node(slot[i]) );
             return ;
         }
     }
-    
+    list.AddToList( new node(newM) );
 }
 
 AMateria*   MateriaSource::createMateria( std::string const& type )
 {
+    
     for ( int i = 0 ; i < 4 ; i++ )
     {
         if ( slot[i]->getType() == type )
@@ -55,9 +57,4 @@ AMateria*   MateriaSource::createMateria( std::string const& type )
 
 MateriaSource::~MateriaSource()
 {
-    for ( int i = 0 ; i < 4 ; i++)
-    {
-        if (slot[i])
-            delete slot[i];
-    }
 }

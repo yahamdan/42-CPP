@@ -1,7 +1,8 @@
+
 #include "AMateria.hpp"
 
 AMateria::AMateria()
-{    
+{
 }
 
 AMateria::AMateria( const AMateria& other )
@@ -17,7 +18,7 @@ AMateria::AMateria( std::string const & type )
 AMateria& AMateria::operator= ( const AMateria& other )
 {
     if ( this != &other )
-        *this = other;
+        this->type = other.type;
     return *this;
 }
 

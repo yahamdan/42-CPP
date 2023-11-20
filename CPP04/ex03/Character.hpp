@@ -1,3 +1,4 @@
+
 #pragma once 
 
 #include "ICharacter.hpp"
@@ -7,7 +8,6 @@ class Character : public ICharacter
 {
 private:
     std::string name;
-    class linkedList list;
     class AMateria *slot[4];
     
 public:
@@ -23,5 +23,4 @@ public:
     std::string const & getName() const;
 
     ~Character();
-
 };
